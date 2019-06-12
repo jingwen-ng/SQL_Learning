@@ -1,0 +1,60 @@
+//Q1
+SELECT name, continent, population FROM world
+
+//Q2
+SELECT name FROM world
+WHERE population >= 200000000
+
+//Q3
+select name, GDP/population
+from world
+WHERE population >= 200000000
+
+//Q4
+select name,population/1000000 from world
+where continent = 'South America'
+
+//Q5
+select name,population from world
+where name in ('France','Germany','Italy')
+
+//Q6
+select name from world
+where name like '%United%'
+
+//Q7
+select name,population,area from world
+where area >=3000000 or population >=250000000 
+
+//Q8
+select name,population,area from world
+where area >=3000000 xor population >=250000000 //xor == not in
+
+//Q9
+select name,round(population/1000000,2),round(gdp/1000000000,2) from world
+where continent = 'South America'
+
+//Q10
+select name,round(gdp/population,-3) from world
+where gdp >=1000000000000
+
+//Q11
+SELECT name, capital
+  FROM world
+ WHERE LENGTH(capital) = LENGTH(name)
+
+//Q12
+SELECT name, capital
+FROM world
+where name <> capital and LEFT(name,1) = LEFT(capital,1)
+
+//Q13
+SELECT name
+   FROM world
+WHERE name LIKE '%a%'
+  AND name LIKE '%e%'
+AND name LIKE '%i%'
+AND name LIKE '%o%'
+AND name LIKE '%u%'
+AND name NOT Like '% %'
+
